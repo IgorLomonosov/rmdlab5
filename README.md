@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+# Лабораторна робота № 5: Побудова навігації у React Native із використанням бібліотеки Ехро Router
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Опис реалізованого функціоналу
 
-## Get started
+У рамках лабораторної роботи було розроблено мобільний застосунок з використанням file-based маршрутизації Expo Router. Застосунок містить наступний функціонал:
 
-1. Install dependencies
+- **Глобальний стан авторизації:** Реалізовано за допомогою React Context (`AuthContext`), який керує станом входу користувача.
+- **Публічні екрани (Група маршрутів):** Екрани "Вхід" (`/login`) та "Реєстрація" (`/register`), доступні для неавторизованих користувачів.
+- **Захищена навігація:** Головний екран каталогу та екран деталей товару доступні лише після авторизації. Перевірка здійснюється на рівні макета (`_layout.jsx`).
+- **Динамічні маршрути:** Реалізовано перехід на сторінку конкретного товару за його ідентифікатором (`/details/[id]`) з відображенням динамічних даних.
+- **Обробка помилок навігації:** Створено кастомну сторінку 404 (`+not-found.jsx`) для обробки запитів на неіснуючі маршрути.
+
+## Інструкція запуску
+
+Для запуску проєкту на вашому локальному комп'ютері виконайте наступні кроки:
+
+1. Склонуйте репозиторій:
+
+   ```bash
+   git clone https://github.com/IgorLomonosov/rmdlab5.git
+   ```
+
+2. Перейдіть у директорію проєкту:
+
+   ```bash
+   cd lab5
+   ```
+
+3. Встановіть залежності:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+4. Запустіть проєкт:
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+5. Для перегляду застосунку відскануйте QR-код через додаток Expo Go на вашому смартфоні, або натисніть a для запуску на Android-емуляторі, i для iOS-симулятора, чи w для відкриття у браузері.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Скріншоти роботи застосунку
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Екран входу
 
-## Get a fresh project
+![Login](./assets/Login.jpg)
 
-When you're ready, run:
+### Екран реєстрації
 
-```bash
-npm run reset-project
-```
+![Register](./assets/Register.jpg)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Екран каталогу
 
-## Learn more
+![Products](./assets/Products.jpg)
 
-To learn more about developing your project with Expo, look at the following resources:
+### Екран товару
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+![Details](./assets/Details.jpg)
 
-## Join the community
+### Екран 404
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+![Login](./assets/404.png)
